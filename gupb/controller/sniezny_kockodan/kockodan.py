@@ -184,7 +184,7 @@ class SnieznyKockodanController(controller.Controller):
         return False
 
     @staticmethod
-    def get_visible_weapons(knowledge: characters.ChampionKnowledge) -> list[coordinates.Coords]:
+    def get_visible_weapons(knowledge: characters.ChampionKnowledge):
         visible_weapons = []
         for tile in knowledge.visible_tiles:
             if knowledge.visible_tiles[tile].loot is not None:
@@ -193,7 +193,7 @@ class SnieznyKockodanController(controller.Controller):
         return visible_weapons
 
     @staticmethod
-    def find_enemies_seen(knowledge: characters.ChampionKnowledge) -> list[coordinates.Coords]:
+    def find_enemies_seen(knowledge: characters.ChampionKnowledge):
         enemies = []
         for tile in knowledge.visible_tiles:
             if knowledge.visible_tiles[tile].character is not None and tile != knowledge.position:
